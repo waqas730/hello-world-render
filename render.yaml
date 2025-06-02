@@ -1,7 +1,9 @@
 services:
   - type: web
-    name: hello-world
-    env: python
-    plan: free
+    name: hello-world-render
+    runtime: python
     buildCommand: ""
-    startCommand: "python app.py"
+    startCommand: python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
